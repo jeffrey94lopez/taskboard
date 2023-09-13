@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row kanban-board">
+            <!-- Columna Por Hacer -->
+            <div class="col kanban-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2 class="text-center">Por hacer <span class="task-count">(0)</span></h2>
+                <button class="btn btn-primary mb-3" onclick="addTask(this.parentElement)">Añadir tarea</button>
+                <div class="kanban-task card p-2 mb-2" draggable="true" ondragstart="drag(event)" ondblclick="editTaskTitle(this)">
+                    <div class="task-title" ondblclick="editElementText(this)">Tarea 1</div>
+                     <hr class="task-separator">
+                    <div class="task-description" ondblclick="editElementText(this)">Descripción aquí...</div>
+                </div>
+                <div class="kanban-task card p-2 mb-2" draggable="true" ondragstart="drag(event)" ondblclick="editTaskTitle(this)">
+                    <div class="task-title" ondblclick="editElementText(this)">Tarea 2</div>
+                     <hr class="task-separator">
+                    <div class="task-description" ondblclick="editElementText(this)">Descripción aquí...</div>
+                </div>
+            </div>
+ 
+            <!-- Columna En Progreso -->
+            <div class="col kanban-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2 class="text-center">En progreso <span class="task-count">(0)</span></h2>
+                <button class="btn btn-primary mb-3" onclick="addTask(this.parentElement)">Añadir tarea</button>
+                <div class="kanban-task card p-2 mb-2" draggable="true" ondragstart="drag(event)" ondblclick="editTaskTitle(this)">
+                    <div class="task-title" ondblclick="editElementText(this)">Tarea 3</div>
+                     <hr class="task-separator">
+                    <div class="task-description" ondblclick="editElementText(this)">Descripción aquí...</div>
+                </div>
+            </div>
+            <!-- Columna Hecho -->
+            <div class="col kanban-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2 class="text-center">Hecho <span class="task-count">(0)</span></h2>
+                <button class="btn btn-primary mb-3" onclick="addTask(this.parentElement)">Añadir tarea</button>
+                <div class="kanban-task card p-2 mb-2" draggable="true" ondragstart="drag(event)" ondblclick="editTaskTitle(this)">
+                    <div class="task-title" ondblclick="editElementText(this)">Tarea 4</div>
+                     <hr class="task-separator">
+                    <div class="task-description" ondblclick="editElementText(this)">Descripción aquí...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
